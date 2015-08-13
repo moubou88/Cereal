@@ -5,17 +5,38 @@
 
 
 {% block body %}
-	<h3>{{ cereal.name}}</h3>
-	<ul>
+<div class="container">
 
-		<li><b>Manufacturer:</b> {{ cereal.manufacturer }}</li>
-		{% for fact in cereal.nutritionalfacts.nutrition_list %}
-			<li>{{ fact }}</li>
-		{% endfor %}
+	<div class="row">
+
+		<div class="col-md-6">
 
 
+			<h3>{{ cereal.name}}</h3>
+			<img class="col-xs-12 col-sm-6 col-md8" src="/media/{{ cereal.image }}"></br>
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/f6sw39pPrr8" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="col-md-6">
 
-	</ul>
+				<ul>
+
+					<li><b>Manufacturer:</b> {{ cereal.manufacturer }}</li>
+					{% for fact in cereal.nutritionalfacts.nutrition_list %}
+						<li>{{ fact }}</li>
+					{% endfor %}
+
+
+
+				</ul>
+
+
+				<p>{{ cereal.info }}</p>
+
+		</div>
+
+	</div>
+
+</div>
 	{% endblock %}
 
 
